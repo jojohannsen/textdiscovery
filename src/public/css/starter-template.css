@@ -1,0 +1,15 @@
+body {
+  padding-top: 50px;
+}
+
+.form-space {
+  margin-top: 10px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+#version, #numberWords {
+  font-size: 8px;
+}

@@ -1,0 +1,21 @@
+set -x
+echo "START TEST" > actual.txt
+echo "Test #1: get all records" >> actual.txt
+./getall >> actual.txt
+echo "Test #2: add new records" >> actual.txt
+./postit >> actual.txt
+echo "Test #3: verify new records present" >> actual.txt
+./getall >> actual.txt
+echo "Test #4: change a record" >> actual.txt
+./putit >> actual.txt
+echo "Test #5: get a record" >> actual.txt
+./getit >> actual.txt
+echo "Test #6: delete a record" >> actual.txt
+./deleteit >> actual.txt
+echo "Test #7: verify record deleted" >> actual.txt
+./getall >> actual.txt
+echo "END OF TEST" >> actual.txt
+echo "Comparing results"
+ruby scrub_time.rb actual.txt > actual.scrubbed
+ruby scrub_time.rb expected.txt > expected.scrubbed
+diff expected.scrubbed actual.scrubbed

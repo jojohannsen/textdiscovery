@@ -1,0 +1,3 @@
+$.getJSON("/reviews/1", function(result){
+        alert(result);
+    });

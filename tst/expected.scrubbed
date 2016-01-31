@@ -1,0 +1,7 @@
+START TEST
+Test #1: get all records
+[]Test #2: add new records
+Test #3: verify new records present
+[{"id":1,"name":"Hello","text":"World","created_at":"*","updated_at":"*"},{"id":2,"name":"test2","text":"test2","created_at":"*","updated_at":"*"},{"id":3,"name":"Joh","text":"Johannsen","created_at":"*","updated_at":"*"}]Test #4: change a record\n"Review was updated."Test #5: get a record
+{"id":2,"name":"REPLACEd using PUT","text":"test2","created_at":"*","updated_at":"*"}Test #6: delete a record\n"Review was removed."Test #7: verify record deleted
+[{"id":1,"name":"Hello","text":"World","created_at":"*","updated_at":"*"},{"id":3,"name":"Joh","text":"Johannsen","created_at":"*","updated_at":"*"}]END OF TEST\n

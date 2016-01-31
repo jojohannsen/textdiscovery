@@ -1,0 +1,3 @@
+curl -d "review[name]=Hello&review[text]=World" http://localhost:4567/reviews
+curl -d "review[name]=test2&review[text]=test2" http://localhost:4567/reviews
+curl -d "review[name]=Joh&review[text]=Johannsen" http://localhost:4567/reviews

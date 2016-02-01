@@ -60,19 +60,27 @@
     <div class="row form-space">
       <div class="col-md-2">
           <div class="form-group">
-            <input type="text" class="form-control" name="w0">
-            <input type="text" class="form-control" name="w1">
-            <input type="text" class="form-control" name="w2">
+            <table>
+              <tr><td class="word-count" id="w0count"></td><td><input type="text" class="form-control" name="w0"></td></tr>
+              <tr><td class="word-count" id="w1count"></td><td><input type="text" class="form-control" name="w1"></td></tr>
+              <tr><td class="word-count" id="w2count"></td><td><input type="text" class="form-control" name="w2"></td></tr>
+              <tr><td class="word-count" id="w3count"></td><td><input type="text" class="form-control" name="w3"></td></tr>
+              <tr><td class="word-count" id="w4count"></td><td><input type="text" class="form-control" name="w4"></td></tr>
+              <tr><td class="word-count" id="w5count"></td><td><input type="text" class="form-control" name="w5"></td></tr>
+              <tr><td class="word-count" id="w6count"></td><td><input type="text" class="form-control" name="w6"></td></tr>
+              <tr><td class="word-count" id="w7count"></td><td><input type="text" class="form-control" name="w7"></td></tr>
+              <tr><td class="word-count" id="w8count"></td><td><input type="text" class="form-control" name="w8"></td></tr>
+              <tr><td class="word-count" id="w9count"></td><td><input type="text" class="form-control" name="w9"></td></tr>
+              <tr><td class="word-count" id="w10count"></td><td><input type="text" class="form-control" name="w10"></td></tr>
+            </table>
           </div>
           <button id="search" type="submit" class="btn btn-default">Search</button>
       </div>
       <div class="col-md-10">
-        <h2 id="placeholder">This should get replaced when "REST TEST" button is clicked</h2>
-        <div id="chart" style="width:500px;height:250px">
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="500">
-            <line x1="0" x2="0" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="20" x2="20" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="40" x2="40" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="60" x2="60" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="80" x2="80" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="100" x2="100" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="120" x2="120" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="140" x2="140" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="160" x2="160" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="180" x2="180" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="200" x2="200" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="220" x2="220" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="240" x2="240" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="260" x2="260" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="280" x2="280" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="300" x2="300" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="320" x2="320" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="340" x2="340" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="360" x2="360" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="380" x2="380" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="400" x2="400" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="420" x2="420" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="440" x2="440" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="460" x2="460" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="480" x2="480" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line x1="500" x2="500" y1="40" y2="250" style="stroke: rgb(238, 238, 238);"></line><line y1="40" y2="40" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="60" y2="60" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="80" y2="80" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="100" y2="100" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="120" y2="120" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="140" y2="140" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="160" y2="160" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="180" y2="180" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="200" y2="200" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="220" y2="220" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><line y1="240" y2="240" x1="0" x2="500" style="stroke: rgb(238, 238, 238);"></line><rect id="s0" x="50" y="150" width="80" height="100" style="stroke: none; fill: steelblue;"></rect><rect id="s1" x="150" y="100" width="80" height="150" style="stroke: none; fill: steelblue;"></rect><rect id="s2" x="250" y="120" width="80" height="130" style="stroke: none; fill: steelblue;"></rect><rect id="s3" x="350" y="80" width="80" height="170" style="stroke: none; fill: rgb(139, 0, 0);"></rect></svg>
-
-
+        <div id="chart"">
+          <svg id="canvas" xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="100">
+            <line x1="0" y1="5" x2="800" y2="5" stroke="lightgray" stroke-width="5"/>
+          </svg>
         </div>
       </div>
     </div><!-- end of row -->
@@ -85,12 +93,42 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script type="application/javascript">
+  var xScale = d3.scale.linear();
+  var yScale = d3.scale.linear();
+  var colorScale = d3.scale.linear();
+  var globalWidth = 800;
+  var globalHeight = 100;
+  var colors = [ "#2A39DF", "#3C4AE2", "#4E5AE4", "#626DE8", "#717BEA", "#838CEC"];
+  colorScale.range([0,colors.length - 1]);
+  xScale.range([0,globalWidth]);
+  yScale.range([0,globalHeight]);
+  var svg = d3.select("svg");
+  var globalData = [];
+  var globalCounts = [];
+  var globalCellCounter = 0;
   $( "#load" ).click(function() {
     $.getJSON("/load", function(result){
+      xScale.domain([0, result.numberWords]);
       document.getElementById("doc").innerHTML=result.file + " <span id='numberWords'>" + result.numberWords + "</span>";
     });
   });
+
+  function getNextCellWithWord() {
+    var form = $( "#searchForm" );
+    while (true) {
+      globalCellCounter += 1;
+      cellCandidate = document.getElementById("w" + globalCellCounter + "count");
+      term = form.find( "input[name='w" + globalCellCounter + "']" ).val();
+      if (term.length > 0) {
+        return cellCandidate;
+      }
+      if (globalCellCounter >= 10) {
+        return null;
+      }
+    }
+  }
   // Attach a submit handler to the form
   $( "#searchForm" ).submit(function( event ) {
 
@@ -101,18 +139,49 @@
     var $form = $( this );
     var url = $form.attr( "action" );
     var words = [];
-    var term = $form.find( "input[name='w0']" ).val();
-    if (term.length > 0) { words[words.length] = term; }
-    term = $form.find( "input[name='w1']" ).val();
-    if (term.length > 0) { words[words.length] = term; }
-    term = $form.find( "input[name='w2']" ).val();
-    if (term.length > 0) { words[words.length] = term; }
+    var term = "";
+    for (var i = 0; i <= 10; i++) {
+      term = $form.find( "input[name='w" + i + "']" ).val();
+      if (term.length > 0) { words[words.length] = term; }
+    }
+
     // Send the data using post
     var posting = $.post( url, { "words": words } );
 
     // Put the results in a div
+    globalCellCounter = -1;
     posting.done(function( data ) {
-      document.getElementById("placeholder").innerHTML=data;
+      globalData = eval(data);
+
+      var arrayLength = globalData.length;
+      globalCounts = Array(globalWidth).fill(0);
+      var counter = 0;
+      var wordOffset = -1;
+      for (var i = 0; i < arrayLength; i++) {
+        var innerArrayLength = globalData[i].length;
+        var countCell = getNextCellWithWord();
+        countCell.innerHTML = innerArrayLength;
+        var innerArray = globalData[i];
+        for (var j = 0; j < innerArrayLength; j++) {
+          counter += 1;
+          globalCounts[Math.floor(xScale(innerArray[j]))] += 1
+        }
+      }
+      yScale.domain([0, d3.max(globalCounts)]);
+      colorScale.domain([0, d3.max(globalCounts)]);
+
+      var canvas = d3.select("#canvas");
+      $("#canvas").empty();
+      canvas.append('rect').attr('x', 0).attr('y', 8).attr('width', globalWidth).attr('height', 2).fill('yellow');
+      canvas.selectAll('rect')
+              .data(globalCounts)
+              .enter()
+              .append('rect')
+              .attr('fill', function(d) { return colors[Math.round(colorScale(d))]; })
+              .attr('x', function(d, i) { return i; })
+              .attr('y', 10)
+              .attr('width', 1)
+              .attr('height', function(d) { return yScale(d); });
     });
   });
 </script>

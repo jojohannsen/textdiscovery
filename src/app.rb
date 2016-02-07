@@ -40,16 +40,38 @@ get '/starter' do
   erb :starter
 end
 
+get '/reset' do
+  @@documentLoaded = false
+  @documentLoaded = @@documentLoaded
+  erb :starter
+end
+
 get '/load' do
   content_type :json
-
-  @@dataSource = WordDataSource.new("data/hadoopBook.txt")
+  myBaseDir = File.dirname(__FILE__)
+  @@dataSource = WordDataSource.new(File.join(myBaseDir, 'data/hadoopBook.txt'))
   hash = {
       :valueDepth => true
   }
   @@suffixTree = SuffixTree.new(nil, hash)
   @@suffixTree.addDataSource(@@dataSource)
   @@documentName = "hadoopBook.pdf"
+  result = { "file" => @@documentName, "numberWords" => @@suffixTree.startOffset }
+  @@documentLoaded = true
+  status 200
+  json result
+end
+
+get '/loadsmall' do
+  content_type :json
+  myBaseDir = File.dirname(__FILE__)
+  @@dataSource = WordDataSource.new(File.join(myBaseDir, 'data/small.txt'))
+  hash = {
+      :valueDepth => true
+  }
+  @@suffixTree = SuffixTree.new(nil, hash)
+  @@suffixTree.addDataSource(@@dataSource)
+  @@documentName = "small.txt"
   result = { "file" => @@documentName, "numberWords" => @@suffixTree.startOffset }
   @@documentLoaded = true
   status 200
@@ -64,7 +86,7 @@ post '/searcher' do
   words = params[:words]
   result = []
   words.each do |word|
-      result <<= searcher.findWord(word)
+      result <<= searcher.findWord(word.downcase)
   end
   status 200
   json result.to_s
@@ -73,7 +95,7 @@ end
 get '/search/:word' do
   content_type :json
   searcher = Searcher.new(@@dataSource, @@suffixTree.root)
-  result = searcher.findWord(params[:word])
+  result = searcher.findWord(params[:word].downcase)
   hash = { params[:word] => result }
   status 200
   json hash.to_s

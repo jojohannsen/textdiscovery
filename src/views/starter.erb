@@ -46,7 +46,12 @@
         <li class="active"><a id="doc" href="#"><% if @documentLoaded %>
               <%= @documentName %>
           <% else %>
-              <input class="btn btn-sm btn-default" type="button" id="load" value="load pdf">
+              <input class="btn btn-sm btn-default" type="button" id="load" value="load large file">
+          <% end %></a><span id="numberWords"></span></li>
+        <li class="active"><a id="docsmall" href="#"><% if @documentLoaded %>
+              <%= @documentName %>
+          <% else %>
+              <input class="btn btn-sm btn-default" type="button" id="loadsmall" value="load small file">
           <% end %></a><span id="numberWords"></span></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -59,25 +64,25 @@
   <form id="searchForm" role="form" method="post" action="/searcher">
     <div class="row form-space">
       <div class="col-md-2">
-          <div class="form-group">
-            <table>
-              <tr><td class="word-count" id="w0count"></td><td><input type="text" class="form-control" name="w0"></td></tr>
-              <tr><td class="word-count" id="w1count"></td><td><input type="text" class="form-control" name="w1"></td></tr>
-              <tr><td class="word-count" id="w2count"></td><td><input type="text" class="form-control" name="w2"></td></tr>
-              <tr><td class="word-count" id="w3count"></td><td><input type="text" class="form-control" name="w3"></td></tr>
-              <tr><td class="word-count" id="w4count"></td><td><input type="text" class="form-control" name="w4"></td></tr>
-              <tr><td class="word-count" id="w5count"></td><td><input type="text" class="form-control" name="w5"></td></tr>
-              <tr><td class="word-count" id="w6count"></td><td><input type="text" class="form-control" name="w6"></td></tr>
-              <tr><td class="word-count" id="w7count"></td><td><input type="text" class="form-control" name="w7"></td></tr>
-              <tr><td class="word-count" id="w8count"></td><td><input type="text" class="form-control" name="w8"></td></tr>
-              <tr><td class="word-count" id="w9count"></td><td><input type="text" class="form-control" name="w9"></td></tr>
-              <tr><td class="word-count" id="w10count"></td><td><input type="text" class="form-control" name="w10"></td></tr>
-            </table>
-          </div>
-          <button id="search" type="submit" class="btn btn-default">Search</button>
+        <div class="form-group">
+          <table>
+            <tr><td class="word-count" id="w0count"></td><td><input type="text" class="form-control" name="w0"></td></tr>
+            <tr><td class="word-count" id="w1count"></td><td><input type="text" class="form-control" name="w1"></td></tr>
+            <tr><td class="word-count" id="w2count"></td><td><input type="text" class="form-control" name="w2"></td></tr>
+            <tr><td class="word-count" id="w3count"></td><td><input type="text" class="form-control" name="w3"></td></tr>
+            <tr><td class="word-count" id="w4count"></td><td><input type="text" class="form-control" name="w4"></td></tr>
+            <tr><td class="word-count" id="w5count"></td><td><input type="text" class="form-control" name="w5"></td></tr>
+            <tr><td class="word-count" id="w6count"></td><td><input type="text" class="form-control" name="w6"></td></tr>
+            <tr><td class="word-count" id="w7count"></td><td><input type="text" class="form-control" name="w7"></td></tr>
+            <tr><td class="word-count" id="w8count"></td><td><input type="text" class="form-control" name="w8"></td></tr>
+            <tr><td class="word-count" id="w9count"></td><td><input type="text" class="form-control" name="w9"></td></tr>
+            <tr><td class="word-count" id="w10count"></td><td><input type="text" class="form-control" name="w10"></td></tr>
+          </table>
+        </div>
+        <button id="search" type="submit" class="btn btn-default">Search</button>
       </div>
       <div class="col-md-10">
-        <div id="chart"">
+        <div id="chart">
           <svg id="canvas" xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="100">
             <line x1="0" y1="5" x2="800" y2="5" stroke="lightgray" stroke-width="5"/>
           </svg>
@@ -114,7 +119,12 @@
       document.getElementById("doc").innerHTML=result.file + " <span id='numberWords'>" + result.numberWords + "</span>";
     });
   });
-
+  $( "#loadsmall" ).click(function() {
+    $.getJSON("/loadsmall", function(result){
+      xScale.domain([0, result.numberWords]);
+      document.getElementById("docsmall").innerHTML=result.file + " <span id='numberWords'>" + result.numberWords + "</span>";
+    });
+  });
   function getNextCellWithWord() {
     var form = $( "#searchForm" );
     while (true) {
